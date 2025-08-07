@@ -25,6 +25,17 @@ internal class Program
         public bool UsingDefaultPassword { get; set; }
     }
 
+    private static void PrintHeader()
+    {
+        Console.WriteLine();
+        Console.WriteLine(new string('#', 60));
+        Console.WriteLine("ImageScrambler");
+        Console.WriteLine("Copyright (c) 2024-2025 app-pub & Churyne. All Rights Reserved.");
+        Console.WriteLine("Repository: https://github.com/app-pub/ImageScrambler");
+        Console.WriteLine(new string('#', 60));
+        Console.WriteLine();
+    }
+
     private static async Task<int> Main(string[] args)
     {
         try
@@ -42,6 +53,8 @@ internal class Program
                     // Ignore encoding setup errors on some systems
                 }
             }
+
+            PrintHeader();
 
             var options = ParseArguments(args);
 
